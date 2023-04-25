@@ -1,0 +1,4 @@
+ # {{ .Values.service.type }}
+
+namespace: bookinfo
+

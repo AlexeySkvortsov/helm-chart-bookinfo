@@ -1,0 +1,2 @@
+Use this command in a few seconds to validate bookinfo IGW IP address:
+kubectl get svc -n bookinfo
