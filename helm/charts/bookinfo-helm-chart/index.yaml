@@ -3,7 +3,7 @@ entries:
   bookinfo:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-04-27T10:43:04.371754-04:00"
+    created: "2023-04-27T10:58:56.725339-04:00"
     description: TSB bookinfo Helm Chart.
     digest: d2e0d8fada4c663583869a307f8c46406d6a5eb864c48f5f2d831df7971c44cc
     name: bookinfo
@@ -11,4 +11,4 @@ entries:
     urls:
     - bookinfo-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-27T10:43:04.371438-04:00"
+generated: "2023-04-27T10:58:56.724916-04:00"
