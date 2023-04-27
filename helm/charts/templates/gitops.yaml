@@ -1,0 +1,57 @@
+apiVersion: tsb.tetrate.io/v2
+kind: Tenant
+metadata:
+  name: {{ .Values.tenant }}
+  annotations:
+    tsb.tetrate.io/organization: {{ .Values.organization }}
+spec:
+  displayName: {{ .Values.tenant }}
+---
+apiVersion: tsb.tetrate.io/v2
+kind: Workspace
+metadata:
+  name: {{ .Values.workspace }}
+  annotations:
+    tsb.tetrate.io/organization: {{ .Values.organization }}
+    tsb.tetrate.io/tenant: {{ .Values.tenant }}
+spec:
+  namespaceSelector:
+    names:
+      - "*/{{ .Values.namespace }}"
+---
+apiVersion: gateway.tsb.tetrate.io/v2
+kind: Group
+metadata:
+  name: {{ .Values.group }}
+  annotations:
+    tsb.tetrate.io/organization: {{ .Values.organization }}
+    tsb.tetrate.io/tenant: {{ .Values.tenant }}
+    tsb.tetrate.io/workspace: {{ .Values.workspace }}
+spec:
+  namespaceSelector:
+    names:
+      - "*/{{ .Values.namespace }}"
+  configMode: BRIDGED
+---
+apiVersion: gateway.tsb.tetrate.io/v2
+kind: IngressGateway
+metadata:
+  name: bookinfo-gw-ingress
+  annotations:
+    tsb.tetrate.io/organization: {{ .Values.organization }}
+    tsb.tetrate.io/gatewayGroup: {{ .Values.group }}
+    tsb.tetrate.io/workspace: {{ .Values.workspace }}
+    tsb.tetrate.io/tenant: {{ .Values.tenant }}
+spec:
+  workloadSelector:
+    namespace: {{ .Values.namespace }}
+    labels:
+      app: tsb-gateway-bookinfo
+  http:
+  - name: bookinfo
+    port: {{ .Values.hostnameport }}
+    hostname: "bookinfo.tetrate.com"
+    routing:
+      rules:
+      - route:
+          host: "bookinfo/productpage.bookinfo.svc.cluster.local"

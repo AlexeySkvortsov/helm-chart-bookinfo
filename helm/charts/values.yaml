@@ -1,0 +1,19 @@
+ # {{ .Values.organization }}
+ # {{ .Values.namespace }}
+ # {{ .Values.tenant }}
+ # {{ .Values.workspace }}
+ # {{ .Values.group }}
+ # {{ .Values.hostnameport }}
+
+
+organization: tetrate
+
+tenant: tetrate
+
+workspace: bookinfo-ws
+
+namespace: bookinfo
+
+group: bookinfo-gw
+
+hostnameport: 80
