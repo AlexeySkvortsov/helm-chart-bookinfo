@@ -3,12 +3,12 @@ entries:
   bookinfo:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-04-27T11:11:25.192405-04:00"
+    created: "2023-04-27T15:08:48.390759-04:00"
     description: TSB bookinfo Helm Chart.
-    digest: 50812c17a2ec39e727845bd6e2299f9c1ef334438e06e550f22941c597f66b47
+    digest: 139ef18825236faea828fc3ce7dbd313f4931ea4e21dbc1ec5ba79e0bd0c71ee
     name: bookinfo
     type: application
     urls:
-    - bookinfo-0.1.0.tgz
+    - https://alexeyskvortsov.github.io/helm-chart-bookinfo/helm/charts/bookinfo-helm-chart/bookinfo-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-27T11:11:25.192044-04:00"
+generated: "2023-04-27T15:08:48.390301-04:00"
